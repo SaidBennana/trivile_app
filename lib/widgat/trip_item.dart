@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:trivile_app/Screens/Trips_Detels.dart';
 import '../modiles/trip_modile.dart';
 
 class Trip_item_Card extends StatelessWidget {
   final String tital;
+  final String id;
   final String imageUrl;
   final int duration;
   final Season season;
   final TripType tripType;
 
-  const Trip_item_Card(
-      {super.key,
-      required this.tital,
-      required this.imageUrl,
-      required this.duration,
-      required this.season,
-      required this.tripType});
+  const Trip_item_Card({
+    super.key,
+    required this.tital,
+    required this.id,
+    required this.imageUrl,
+    required this.duration,
+    required this.season,
+    required this.tripType,
+  });
   String get seasonAr {
     switch (season) {
       case Season.Autumn:
@@ -34,6 +38,7 @@ class Trip_item_Card extends StatelessWidget {
         break;
     }
   }
+
   String get tripTypeAr {
     switch (tripType) {
       case TripType.Activities:
@@ -54,9 +59,14 @@ class Trip_item_Card extends StatelessWidget {
     }
   }
 
+  void SelectTrip(BuildContext ctx) {
+    Navigator.of(ctx).pushNamed(Trips_Detals.PageLink, arguments: id);
+  }
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      onTap: () => SelectTrip(context),
       child: Card(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
