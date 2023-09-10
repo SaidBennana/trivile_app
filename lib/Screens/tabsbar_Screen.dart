@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:trivile_app/adsManager.dart';
+
 import '../Screens/Fiveoret_screen.dart';
 import '../Screens/categorys_Screens.dart';
-import '../data_app.dart';
 import '../modiles/trip_modile.dart';
 import '../widgat/app_drawr.dart';
 
@@ -18,6 +19,7 @@ class _Tabsbar_ScreenState extends State<Tabsbar_Screen> {
   int _Select_Screen_index = 0;
   void Select_Page(int index) {
     setState(() {
+      showInterstitial();
       _Select_Screen_index = index;
     });
   }
@@ -27,8 +29,8 @@ class _Tabsbar_ScreenState extends State<Tabsbar_Screen> {
   @override
   void initState() {
     _Screens = [
-      {'screen': Category_Screen(), 'tital': 'دليل سياحي'},
-      {'screen': Fiveoret_screen(widget._MyFivoret), 'tital': 'قائمة المفضلة'},
+      {'screen': Category_Screen(), 'tital': 'Tourist guide'},
+      {'screen': Fiveoret_screen(widget._MyFivoret), 'tital': 'Favorite List'},
     ];
     super.initState();
   }
@@ -52,8 +54,8 @@ class _Tabsbar_ScreenState extends State<Tabsbar_Screen> {
           currentIndex: _Select_Screen_index,
           items: [
             BottomNavigationBarItem(
-                icon: Icon(Icons.dashboard), label: "الفئاة"),
-            BottomNavigationBarItem(icon: Icon(Icons.star), label: "المفضلة"),
+                icon: Icon(Icons.dashboard), label: "Categories"),
+            BottomNavigationBarItem(icon: Icon(Icons.star), label: "Favorite"),
           ]),
       body: _Screens[_Select_Screen_index]['screen'],
     );

@@ -46,7 +46,7 @@ class Trips_Detals extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            MainTital(context, 'الانشطة'),
+            MainTital(context, 'Activities'),
             Container(
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
@@ -63,7 +63,7 @@ class Trips_Detals extends StatelessWidget {
                 itemCount: trips.activities.length,
               ),
             ),
-            MainTital(context, 'البرنامج اليومي'),
+            MainTital(context, 'Daily programme'),
             Container(
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
@@ -77,7 +77,7 @@ class Trips_Detals extends StatelessWidget {
                     ListTile(
                       leading: CircleAvatar(
                         radius: 25,
-                        child: Text('يوم ${index + 1}'),
+                        child: Text('Day ${index + 1}'),
                       ),
                       title: Text(trips.program[index]),
                     ),

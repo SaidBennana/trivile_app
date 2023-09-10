@@ -1,15 +1,20 @@
+import 'package:applovin_max/applovin_max.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:trivile_app/Screens/Filter_Screen.dart';
 import 'package:trivile_app/Screens/Trips_Detels.dart';
 import 'package:trivile_app/Screens/categoryTrips_Screen.dart';
-import 'package:trivile_app/Screens/categorys_Screens.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:trivile_app/Screens/tabsbar_Screen.dart';
+import 'package:trivile_app/adsManager.dart';
 import 'package:trivile_app/data_app.dart';
 import 'package:trivile_app/modiles/trip_modile.dart';
 
-void main() {
+void main() async {
   runApp(const MyApp());
+  Map? sdkConfiguration = await AppLovinMAX.initialize(
+      "g_NeWQT0X8k2VL57HiRHhBoWPv_m12SkTPAT3IUb5kzDgy45tJbleW8qZaZke44aJEuwGK2ftbWlJISqDS7LM_");
+  initializeInterstitialAds();
+  initializeBannerAds();
 }
 
 class MyApp extends StatefulWidget {
@@ -82,7 +87,7 @@ class _MyAppState extends State<MyApp> {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: [
-        Locale('ar'), // Arabic
+        Locale('en'), // en
       ],
       title: 'Flutter Demo',
       theme: ThemeData(

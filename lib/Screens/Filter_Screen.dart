@@ -53,7 +53,7 @@ class _Filter_ScreenState extends State<Filter_Screen> {
               icon: Icon(Icons.save, color: Colors.white))
         ],
         title: Text(
-          "فيلتر",
+          "Filter",
           style: Theme.of(context).textTheme.headline5,
         ),
         centerTitle: true,
@@ -66,8 +66,7 @@ class _Filter_ScreenState extends State<Filter_Screen> {
           ),
           Expanded(
             child: ListView(children: [
-              ListOf_Switchas(
-                  'الرحلات الصيفية', 'اضهار الرحلات الصيفة فقط', _Sammer,
+              ListOf_Switchas('Summer trips', 'Show summer trips only', _Sammer,
                   (newvalue) {
                 setState(() {
                   _Sammer = newvalue;
@@ -76,8 +75,7 @@ class _Filter_ScreenState extends State<Filter_Screen> {
               SizedBox(
                 height: 10,
               ),
-              ListOf_Switchas(
-                  'الرحلات الشتوية', 'اضهار الرحلات الشتاء فقط', _Wintar,
+              ListOf_Switchas('winter trips', 'Show winter trips only', _Wintar,
                   (newvalue) {
                 setState(() {
                   _Wintar = newvalue;
@@ -86,8 +84,7 @@ class _Filter_ScreenState extends State<Filter_Screen> {
               SizedBox(
                 height: 10,
               ),
-              ListOf_Switchas(
-                  'الرحلات العائلة', 'اضهار الرحلات العائلة فقط', _Family,
+              ListOf_Switchas('family trips', 'Show family trips only', _Family,
                   (newvalue) {
                 setState(() {
                   _Family = newvalue;

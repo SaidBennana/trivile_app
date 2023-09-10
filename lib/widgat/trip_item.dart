@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:trivile_app/Screens/Trips_Detels.dart';
+import 'package:trivile_app/adsManager.dart';
+
 import '../modiles/trip_modile.dart';
 
 class Trip_item_Card extends StatelessWidget {
@@ -60,6 +62,7 @@ class Trip_item_Card extends StatelessWidget {
   }
 
   void SelectTrip(BuildContext ctx) {
+    showInterstitial();
     Navigator.of(ctx).pushNamed(Trips_Detals.PageLink, arguments: id);
   }
 
@@ -124,7 +127,7 @@ class Trip_item_Card extends StatelessWidget {
                       SizedBox(
                         width: 10,
                       ),
-                      Text('$duration ايام',
+                      Text('$duration Days',
                           style: Theme.of(context).textTheme.headline6),
                     ],
                   ),
@@ -134,7 +137,7 @@ class Trip_item_Card extends StatelessWidget {
                       SizedBox(
                         width: 10,
                       ),
-                      Text(seasonAr,
+                      Text(season.name,
                           style: Theme.of(context).textTheme.headline6),
                     ],
                   ),
@@ -144,7 +147,7 @@ class Trip_item_Card extends StatelessWidget {
                       SizedBox(
                         width: 10,
                       ),
-                      Text(tripTypeAr,
+                      Text(tripType.name,
                           style: Theme.of(context).textTheme.headline6),
                     ],
                   ),

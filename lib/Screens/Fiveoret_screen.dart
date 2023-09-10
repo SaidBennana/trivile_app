@@ -12,7 +12,7 @@ class Fiveoret_screen extends StatelessWidget {
   Widget build(BuildContext context) {
     if (_MyFivoret.isEmpty) {
       return Center(
-        child: Text("ليس لديك اي مفضلة"),
+        child: Text("You don't have any favourites."),
       );
     } else {
       return ListView.builder(

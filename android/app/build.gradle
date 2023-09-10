@@ -1,3 +1,4 @@
+
 plugins {
     id "com.android.application"
     id "kotlin-android"
@@ -11,6 +12,7 @@ if (localPropertiesFile.exists()) {
         localProperties.load(reader)
     }
 }
+
 
 def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
 if (flutterVersionCode == null) {
@@ -64,4 +66,11 @@ flutter {
     source '../..'
 }
 
-dependencies {}
+dependencies {
+    implementation 'com.applovin:applovin-sdk:11.3.3'
+  
+    implementation 'com.google.android.gms:play-services-location:19.0.1'
+
+    implementation 'com.google.android.gms:play-services-ads-identifier:18.0.1'
+}
+
